@@ -78,7 +78,7 @@ Django의 모듈 중 React를 사용할 수 있게 하는 모듈이 있는 것�
 아마 웹개발 초보자라면 현재 Django시스템의 상태가 대부분 내가 말하는 "기존"상태와 비슷할 것이다.
 
 ***아래 그림에서 위가 기존의 상태고 아래가 바뀐 상태이다.***
-- ![Django시스템 비교]({{site.url}}/img/django구조도비교.jpg)
+- ![Django시스템 비교]({{site.url}}/img/djangorest_1-1.jpg)
 
 위의 상태가 기존의 Django 시스템 상태이고
 아래의 상태가 Django REST API를 적용한 변경된 시스템이다.
