@@ -5,6 +5,7 @@ date: 2019-12-14 14:00:00 +0900
 categories: [development, django_rest]
 show_sidebar: false
 menubar: main_menu
+permalink: '/category/django_rest/1'
 published: true
 ---
 
@@ -76,8 +77,8 @@ Django의 모듈 중 React를 사용할 수 있게 하는 모듈이 있는 것�
 여기서 기존은 내가 하는 프로젝트의 처음 개발 상태를 말하는 것이므로 참고바란다.
 아마 웹개발 초보자라면 현재 Django시스템의 상태가 대부분 내가 말하는 "기존"상태와 비슷할 것이다.
 
-기존의 상태
-- ![Django시스템 비교]({{site.url}}/assets/img/django구조도비교.jpg)
+***아래 그림에서 위가 기존의 상태고 아래가 바뀐 상태이다.***
+- ![Django시스템 비교]({{site.url}}/img/django구조도비교.jpg)
 
 위의 상태가 기존의 Django 시스템 상태이고
 아래의 상태가 Django REST API를 적용한 변경된 시스템이다.

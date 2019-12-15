@@ -1,7 +1,7 @@
 - name: Develpopment
-  link: /#
+  link: /
   dropdown:
-    - name: Django RestFramework
-    - link: /category/django/
+    - name: Django REST API
+      link: /category/django_rest/
 - name: Etc
   link: /category/etc/
