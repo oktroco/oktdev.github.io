@@ -5,7 +5,7 @@ date: 2019-12-14 14:00:00 +0900
 categories: [development, django_rest]
 show_sidebar: false
 menubar: main_menu
-permalink: '/category/django_rest/1'
+permalink: '/category/django_rest/1/'
 published: true
 ---
 

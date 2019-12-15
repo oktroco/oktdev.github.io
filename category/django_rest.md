@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Django REST API
-permalink: '/category/django_rest/'
+permalink: '/category/django_rest/0/'
 ---
 
 <div class="columns is-multiline">
