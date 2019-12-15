@@ -2,6 +2,6 @@
   link: /
   dropdown:
     - name: Django REST API
-      link: /category/django_rest/
+      link: /category/django_rest
 - name: Etc
   link: /category/etc/
