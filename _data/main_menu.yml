@@ -7,5 +7,7 @@
       items:
         - name: Django REST API를 쓰는 이유와 시스템 구조
           link: /category/django_rest/1/
+        - name: Django REST API 환경 구축
+          link: /category/django_rest/2/
     - name: Blog
       link: /blog/

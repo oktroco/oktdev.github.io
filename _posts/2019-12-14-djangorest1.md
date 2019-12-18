@@ -10,7 +10,7 @@ published: true
 comment: true
 ---
 
-# Django REST API를 쓰는 이유
+# Django REST API를 쓰는 이유와 시스템 구조
 
 ```yml
 시작하기 앞서 말씀드라자면, 
