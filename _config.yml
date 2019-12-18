@@ -3,7 +3,7 @@ title: 오곁액의 개발블로그
 tagline: tag
 email: andyoh12@naver.com
 description: >
-  The demo site for Bulma Clean Theme, made for Jekyll and GitHub pages websites
+  들어오는 정보가 많은데 나가는 정보 또한 많기에 기록을 하기로 했다.
 baseurl: ""
 url: "https://oktroco.github.io"
 permalink: pretty
@@ -17,7 +17,7 @@ disqus:
   # Leave shortname blank to disable comments site-wide.
   # Disable comments for any post by adding `comments: false` to that post's YAML Front Matter.
   # shortname: my_disqus_shortname
-  shortname: csrhymes
+  shortname: oktroco
 
 
 plugins:
@@ -44,7 +44,7 @@ sass:
   style: compressed
   source_dir: _sass
 
-#google_analytics: UA-code-here
+google_analytics: UA-154755755-1
 
 defaults:
     scope:
@@ -58,7 +58,7 @@ defaults:
 markdown: kramdown
 highlighter: rouge
 
-footer_menu: example_footer_menu
+footer_menu: footer_menu
 
 collections:
   products: 

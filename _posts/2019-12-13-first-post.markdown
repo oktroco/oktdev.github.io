@@ -6,6 +6,7 @@ categories: etc
 show_sidebar: false
 menubar: main_menu
 published: true
+comment: true
 ---
 
 ```yml

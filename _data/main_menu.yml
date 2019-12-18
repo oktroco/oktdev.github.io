@@ -5,7 +5,7 @@
     - name: Django Rest APIs
       link: /category/django_rest/0/
       items:
-        - name: Django Rest API의 필요성
+        - name: Django REST API를 쓰는 이유와 시스템 구조
           link: /category/django_rest/1/
     - name: Blog
       link: /blog/

@@ -7,6 +7,7 @@ show_sidebar: false
 menubar: main_menu
 permalink: '/category/django_rest/1/'
 published: true
+comment: true
 ---
 
 # Django REST API를 쓰는 이유
