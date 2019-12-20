@@ -19,6 +19,16 @@ comment: true
 
 # Django REST API 환경 구축
 
+아래 항목 중, Django시스템이 이미 구축되어있는 사람은 2,3 과정은 생략하길 권장한다.
+
+[1. PIP에서 모듈 설치](##PIP에서-모듈-설치)
+
+[2. 프로젝트 및 앱 생성](##프로젝트-및-앱-생성)
+
+[3. DB 모델 연동(PostgreSQL) 후 유저 생성](##DB-모델-연동(PostgreSQL)-후-유저-생성)
+
+[4. settings.py에 앱 추가](##settings.py에-앱-추가)
+
 ## PIP에서 모듈 설치
 
 이미 Django를 설치하고 웹을 구동시켜봤다면, pip의 사용법에 대해서는 알고 있을 것이다.
@@ -66,7 +76,7 @@ pip install djangorestframework
 ## 프로젝트 및 앱 생성
 
 이제 모듈을 설치했으니 프로젝트를 만들고 앱을 만들어야한다. 이 부분은 그냥 Django만 설치할 때와 같으므로,
-Django의 프로젝트, 앱을 설치하는 방법이 선명하게 기억난다면, 과감하게 [아래 항목](##DB-모델-연동(PostgreSQL))으로 넘어가자.
+Django의 프로젝트, 앱을 설치하는 방법이 선명하게 기억난다면, 과감하게 [아래 항목](##DB-모델-연동(PostgreSQL)-후-유저-생성)으로 넘어가자.
 
 ```yml
 프로젝트 생성 후 앱 생성
@@ -74,6 +84,29 @@ Django의 프로젝트, 앱을 설치하는 방법이 선명하게 기억난다�
 django-admin startproject <프로젝트명>  #프로젝트 생성
 cd <프로젝트명>                         #프로젝트 폴더로 이동
 django-admin startapp <앱명>          #프로젝트의 앱 생성
+```
+
+그리고 settings.py의 INSTALLED_APPS에 '<앱명>'을 추가하자.
+
+### 예시 코드
+파티와 멤버를 관리하는 partyproject의 partymanager라는 앱을 만들어보겠다.
+
+```yml
+django-admin startproject partyproject
+cd partyproject
+django-admin startapp partymanager
+```
+
+```yml
+settings.py
+
+INSTALLED_APPS = [
+    <기존코드>,
+    ... ,
+    ... ,
+    ... ,
+    'partymanager',
+]
 ```
 
 ## DB 모델 연동(PostgreSQL) 후 유저 생성

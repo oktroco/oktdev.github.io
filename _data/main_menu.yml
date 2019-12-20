@@ -9,5 +9,7 @@
           link: /category/django_rest/1/
         - name: Django REST API 환경 구축
           link: /category/django_rest/2/
+        - name: Serialization(직렬화)
+          link: /category/django_rest/3/
     - name: Blog
       link: /blog/
