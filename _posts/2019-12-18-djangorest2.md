@@ -21,13 +21,13 @@ comment: true
 
 아래 항목 중, Django시스템이 이미 구축되어있는 사람은 2,3 과정은 생략하길 권장한다.
 
-[1. PIP에서 모듈 설치](##PIP에서-모듈-설치)
+[1. PIP에서 모듈 설치](#pip에서-모듈-설치)
 
-[2. 프로젝트 및 앱 생성](##프로젝트-및-앱-생성)
+[2. 프로젝트 및 앱 생성](#프로젝트-및-앱-생성)
 
-[3. DB 모델 연동(PostgreSQL) 후 유저 생성](##DB-모델-연동(PostgreSQL)-후-유저-생성)
+[3. DB 모델 연동(PostgreSQL) 후 유저 생성](#db-모델-연동postgresql-후-유저-생성)
 
-[4. settings.py에 앱 추가](##settings.py에-앱-추가)
+[4. settings.py에 앱 추가](#settingspy에-앱-추가)
 
 ## PIP에서 모듈 설치
 
