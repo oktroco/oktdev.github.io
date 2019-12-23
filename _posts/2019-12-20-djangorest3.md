@@ -19,15 +19,15 @@ comment: true
 
 # Serialization(직렬화)
 
-[1. Serialization(직렬화)이 뭘까?](##Serialization(직렬화)이-뭘까?)
+[1. Serialization(직렬화)이 뭘까?](#serialization직렬화이-뭘까)
 
-[2. Model 작성](##Model-작성)
+[2. Model 작성](#model-작성)
 
-[3. Serializer 작성](##Serializer-작성)
+[3. Serializer 작성](#serializer-작성)
 
-[4. ModelSerializer](##ModelSerializer)
+[4. ModelSerializer](#modelserializer)
 
-[5. Shell에서 테스트해보기(Partymanager)](##Shell에서-테스트해보기(Partymanager))
+[5. Shell에서 테스트해보기(Partymanager)](#shell에서-테스트해보기partymanager)
 
 
 ## Serialization(직렬화)이 뭘까?

@@ -5,7 +5,7 @@ email: andyoh12@naver.com
 description: >
   들어오는 정보가 많은데 나가는 정보 또한 많기에 기록을 하기로 했다.
 baseurl: ""
-url: "https://oktroco.github.io"
+url: https://oktroco.github.io
 permalink: pretty
 #favicon: /path/to/favicon.png
 
