@@ -11,5 +11,7 @@
           link: /category/django_rest/2/
         - name: Serialization(직렬화)
           link: /category/django_rest/3/
+        - name: 로그인 및 회원가입(JWT토큰 방식)
+          link: /category/django_rest/4/
     - name: Blog
       link: /blog/
