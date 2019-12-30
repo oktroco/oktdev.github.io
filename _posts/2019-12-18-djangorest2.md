@@ -4,7 +4,7 @@ title: "Django REST API 환경 구축"
 date: 2019-12-18 16:00:00 +0900
 categories: [development, django_rest]
 show_sidebar: false
-menubar: main_menu
+menubar: djangorest_menu
 permalink: '/category/django_rest/2/'
 published: true
 comment: true

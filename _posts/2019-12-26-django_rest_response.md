@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "로그인 및 회원가입(JWT토큰 방식)"
-date: 2019-12-27 16:00:00 +0900
+date: 2019-12-26 21:00:00 +0900
 categories: [development, django_rest]
 show_sidebar: false
 menubar: main_menu

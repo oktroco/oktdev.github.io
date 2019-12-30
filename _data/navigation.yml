@@ -3,5 +3,7 @@
   dropdown:
     - name: Django REST API
       link: '/category/django_rest/0/'
-- name: Etc
-  link: /category/etc/
+    - name: Etc
+      link: /category/etc/
+- name: OKTROCO
+  link: /category/nodevelopment/

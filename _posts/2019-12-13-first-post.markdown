@@ -2,8 +2,8 @@
 layout: post
 title: "첫 개발 블로그 글"
 date: 2019-12-13 20:00:07 +0900
-categories: etc
-show_sidebar: false
+categories: nodevelopment
+show_sidebar: true
 menubar: main_menu
 published: true
 comment: true

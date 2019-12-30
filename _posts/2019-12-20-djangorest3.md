@@ -4,7 +4,7 @@ title: "Serialization(직렬화)"
 date: 2019-12-20 23:00:00 +0900
 categories: [development, django_rest]
 show_sidebar: false
-menubar: main_menu
+menubar: djangorest_menu
 permalink: '/category/django_rest/3/'
 published: true
 comment: true
