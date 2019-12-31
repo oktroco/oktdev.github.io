@@ -21,6 +21,49 @@ HTTP는 Hyper Text Transfer Protocol의 약자인데, 말 그대로 "하이퍼�
 
 역사에 대해 간략히 얘기하자면 1965년에 테드 넬슨이라는 사람이 "하이퍼 텍스트"라는 말을 만들었고, 팀 버너스 리 라는 사람이 오리지널 HTTP를 만들었다고 한다. 최초로 문서화된 HTTP는 v0.9(1991년)이었다는데, 이 때는 헤더도 없었고 HTML형식의 텍스트만 주고 받았다. 메소드도 GET뿐.... 이후 1996년에 HTTP v1.0에서는 헤더 개념을 도입하였고, 상태코드도 전송하며 유연성과 확장성을 늘렸다. 이후 여러가지 모호성을 보완하여 몇달 뒤인 1997년에 HTTP v1.1을 표준프로토콜로 채택하였다. 이후 2015년에 더 진화한 HTTP/2가 발표되었다고 하는데, 이 이상의 역사에 대한 내용은 각자 찾아보기 바란다.
 
-# HTTP의 헤더
+# HTTP의 기본적인 통신 방식
 
+기본적으로 HTTP는 여러줄로 된 텍스트다. 여기에는 헤더, 바디 등의 구분을 공백으로 구분짓고, 헤더와 바디에 맞게 여러가지 정보들이 오고간다. 헤더는 주로 통신상태, 인증정보 등의 유저의 눈으로 직접 들어가지 않는 정보들이 들어가고, 바디에는 HTML나 JSON형식의 텍스트가 와서 유저의 눈에 직접 보이는 정보들이 주로 들어간다. 
+
+통신을 할 때는 당연하게도 정보를 요청하는 쪽과 응답하는 쪽이 생기게 되는데, 이를 HTTP에서는 Request(요청)와 Response(응답)으로 나눈다. 클라이언트가 url을 설정하고 통신 메소드(GET, POST, PATCH 등)과 여러 정보들을 서버에 Request하면 서버에서는 정보를 처리하고 Response를 반환한다.
+
+# HTTP 메시지의 형태
+
+HTTP 메세지는 시작줄과 헤더와 바디로 구분되어있다. 시작줄은 항상 첫번째 한줄이며, 헤더와 바디는 공백한줄로 구분된다. 줄은 \<CR>\<LF>태그로 바뀐다(캐리지리턴, 라인피드).
+
+Request의 HTTP 메세지 형태와 Response의 HTTP 메세지 형태는 조금 차이가 있는데, 각각 어떻게 생겼는지 아래 예시를 살펴보며 이야기하자.
+
+```yml
+POST /parties/45 HTTP/1.1       # 시작줄
+HOST: localhost:8000            # 헤더 시작
+Content-Type: application/json
+Authorization: jwt <토큰>        # 헤더 끝   
+                                # 공백
+...                             # 바디내용
+```
+
+위와 같이 Request의 시작줄에는 GET, POST같은 메소드가 들어가고, HOST를 제외한 url, http버전이 들어간다.
+그리고 헤더에는 인증정보나 콘텐츠타입 등의 부수적인 정보가 들어가고 공백 이후에 바디가 온다.
+
+
+```yml
+HTTP/1.1 200 OK                         # 시작줄
+Date: Tue, 31 Dec 2019 06:51:30 GMT     # 헤더 시작
+Server: WSGIServer/0.2 CPython/3.7.2
+Content-Type: application/json
+Vary: Accept
+Allow: GET, PATCH, HEAD, OPTIONS
+X-Frame-Options: DENY
+X-Content-Type-Options: nosniff
+Content-Length: 367                     # 헤더 끝
+                                        # 공백
+...                                     # 바디내용
+```
+Response의 시작줄에는 메소드나 url정보는 따로 없다. http의 버전이 먼저오고, 그다음은 숫자 세자리로 된 상태코드와 상태메시지가 온다. 그 이후에는 정보의 차이외에 형식적인 부분은 Request와 비슷하다.
+
+이와 같이 Request와 Response 메시지의 결정적인 차이는 시작줄에 있다고 볼 수 있겠다.
+
+이러한 형태의 HTTP 메시지들을 우리는 브라우저나 curl 등의 응용프로그램을 통해 필요한 정보를 보기쉽게 주고 받는 것이다.
+
+# HTTP 메소드
 (작성 중)
