@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "JWT 로그인 시스템에서의 자동 로그인"
+title: "JWT의 단점과 보완방법(Refresh 토큰)"
 date: 2019-01-11 21:00:00 +0900
 categories: [development, etc]
 show_sidebar: false
