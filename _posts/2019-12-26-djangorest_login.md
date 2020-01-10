@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "로그인 및 회원가입(JWT토큰 방식)"
-date: 2019-12-26 21:00:00 +0900
+title: "로그인(JWT토큰 방식)"
+date: 2020-12-26 21:00:00 +0900
 categories: [development, django_rest]
 show_sidebar: false
 menubar: main_menu
@@ -68,4 +68,56 @@ https://jwt.io/ 에서 JWT방식이 어떻게 정보를 암호화하는지 확�
 
 Django Rest Framework에서도 JWT 인증방식에 대한 도입이 쉽게 모듈이 만들어져있다. 이제부터 JWT 인증방식으로 로그인을 관리해보자.
 
-(수정 중)
+# PIP에서 모듈 설치
+
+```yml
+pip install djangorestframework-jwt
+```
+
+# settings.py 설정
+
+아래와 같이 변수들을 설정한다.
+```yml
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+            'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+    ),
+    ...
+}
+JWT_AUTH = {
+    'JWT_SECRET_KEY': SECRET_KEY, #Verify Signature의 secret key
+    'JWT_ALGORITHM': 'HS256', #암호화에 쓰이는 알고리즘
+    'JWT_ALLOW_REFRESH': True, #갱신 허용 여부
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(days=7), #기본 토큰 만료 제한
+    'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(days=28), #토큰 갱신 제한
+}
+```
+
+# urls.py 설정
+
+원하는 url에 token을 생성하는 기능을 배치하기 위해 urls.py에 들어가서 아래와 같이 jwt모듈의 기능을 임포트한다.
+어느 경로의 urls.py에 설정할지는 본인의 기호에 따라 알아서한다.
+
+```yml
+from rest_framework_jwt.views import obtain_jwt_token, verify_jwt_token, refresh_jwt_token
+```
+obtain_jwt_token : username과 password로 토큰을 생성하고 반환한다.
+verify_jwt_token : 토큰의 유효성을 검증한다.
+refresh_jwt_token : 토큰을 갱신한다.
+
+아래와 같이 기능들을 할당한다.
+```yml
+urlpatterns = [
+    ...,
+    path('api/token', obtain_jwt_token),
+    path('api/token/refresh', refresh_jwt_token),
+    path('api/token/verify', verify_jwt_token)
+]
+```
+
+이렇게 설정하면 api/token 경로로 username과 password를 POST로 보내면 token이 반환된다.
+갱신 설정을 했다면, 받은 token을 api/token/refresh 경로로 POST로 보내면 만료가 갱신된 token이 반환된다.
+토큰을 api/token/verify 경로로 POST로 보내면 유효한 경우 token을 그대로 반환하고 유효하지 않으면 에러메세지를 보낸다.
+
+DjangoRestFramework-jwt 모듈에 대한 더 정확하고 자세한 정보는 아래 링크를 확인하도록 하자. 공식 문서다.
+https://jpadilla.github.io/django-rest-framework-jwt/

@@ -29,6 +29,8 @@ comment: true
 
 [4. settings.py에 앱 추가](#settingspy에-앱-추가)
 
+[5. CORS 설정](#CORS-설정)
+
 ## PIP에서 모듈 설치
 
 이미 Django를 설치하고 웹을 구동시켜봤다면, pip의 사용법에 대해서는 알고 있을 것이다.
@@ -195,5 +197,54 @@ INSTALLED_APPS = [
     'rest_framework', # 이름을 통일했으면 좋겠다.
 ]
 ```
+
+## CORS 설정
+
+이 부분은 옵션이지만, 일반적으로 설정하는 것이 좋을 거다.
+CORS(Cross Origin Resource Sharing)는 도메인 이나 포트가 다른 서버의 자원을 요청하는 매커니즘인데,
+이럴 때는 cross origin HTTP로 요청 된다.
+하지만 동일 출처 정책(same origin policy)라는 것 때문에 CORS 같은 상황이 발생 하면 외부서버에 요청한 데이터를 브라우저에서는 보안목적으로 차단한다. 이에 대해서는 나중에 자세히 다루겠다.
+
+중요한 것은 react와 rest api를 같이 이용하는 경우에 일반적으로 react와 rest api 시스템이 다른 포트를 사용하기 때문에 CORS가 발생하여 브라우저에서 제대로 정보 조회가 안된다는 것이다.
+
+이때 보편적인 방법으로는 HTTP요청의 모든 헤더에 Access-Control-Allow-Origin옵션을 주는 방법이 있는데, Django측에서는 모듈을 설치하면 CORS에 대해 허용하는 주소를 정할 수 있다. 방법은 아래와 같다.
+
+pip install django-rest-cors 한 뒤
+setting의 INSTALLED_APPS 에 'corsheaders' 추가하고 미들웨어 설정을 한다.
+
+```yml
+pip install django-rest-cors
+```
+
+```yml
+
+INSTALLED_APPS = [
+    <기존의 코드>,
+    'corsheaders'
+]
+
+MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware', #CommonMiddleware보다 위에 배치한다. 
+    'django.middleware.common.CommonMiddleware',
+    <기존의 코드>,
+]
+    
+```
+
+그리고 CORS_ORIGIN_ALLOW_ALL 이나 CORS_ORIGIN_WHITELIST 변수를 설정한다.
+CORS_ORIGIN_ALLOW_ALL를 True 로 설정하면 어느 도메인이든 CORS를 허용하게 되고,
+CORS_ORIGIN_ALLOW_ALL를 설정하지 않고, CORS_ORIGIN_WHITELIST에 도메인을 입력하면 해당 도메인의 CORS만을 허용한다.
+
+```yml
+CORS_ORIGIN_ALLOW_ALL = True
+
+or
+
+CORS_ORIGIN_WHITELIST = [
+    'www.mysite.com',
+    'www.mydomain.com'
+]
+```
+
 
 여기까지 왔다면 Django REST Framework의 임포트를 완료한 것이다. 이제 모델을 구축하고 시리얼라이저를 생성하고 여러 디테일한 설정들을 해주면 REST API를 사용할 수 있다. 이번 글은 Django 환경 구축과 겹치는 부분이 많았다. 다음 글에서는 모델을 작성하고 시리얼라이저의 개념에 대해 설명하겠다.
