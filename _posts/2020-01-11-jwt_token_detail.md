@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "JWT의 단점과 보완방법(Refresh 토큰)"
-date: 2019-01-11 21:00:00 +0900
+date: 2020-01-11 21:00:00 +0900
 categories: [development, etc]
 show_sidebar: false
 menubar: main_menu

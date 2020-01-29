@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "본인확인(본인인증)에 대한 이야기"
-date: 2019-01-29 15:50:00 +0900
+date: 2020-01-29 15:50:00 +0900
 categories: [development, etc]
 show_sidebar: false
 published: true
